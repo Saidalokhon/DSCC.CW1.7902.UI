@@ -68,8 +68,12 @@ namespace DSCC.CW1._7902.UI.Controllers
         {
             try
             {
-                await MakeRequest(model);
-                if (ModelState.IsValid) return RedirectToAction("Index");
+                // If all the fields are valid, post the created model and return
+                // to the list of models. Otherwise, return the 'Create' view
+                if (ModelState.IsValid) {
+                    await MakeRequest(model);
+                    return RedirectToAction("Index");
+                } 
                 else return View();
             }
             catch
@@ -93,8 +97,13 @@ namespace DSCC.CW1._7902.UI.Controllers
         {
             try
             {
-                await MakeRequest(model, "PUT", id);
-                if (ModelState.IsValid) return RedirectToAction("Index");
+                // If all the fields are valid, put the edited model and return
+                // to the list of models. Otherwise, return the 'Edit' view
+                if (ModelState.IsValid)
+                {
+                    await MakeRequest(model, "PUT", id);
+                    return RedirectToAction("Index");
+                } 
                 else return View();
             }
             catch
