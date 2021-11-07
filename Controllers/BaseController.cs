@@ -137,7 +137,7 @@ namespace DSCC.CW1._7902.UI.Controllers
         }
         #endregion
         #region GetModelById
-        public async Task<TModel> GetModelById(int id)
+        private async Task<TModel> GetModelById(int id)
         {
             // Create instance of model.
             TModel model = null;
@@ -162,7 +162,7 @@ namespace DSCC.CW1._7902.UI.Controllers
         }
         #endregion
         #region SetGetHeaders
-        public async Task<HttpResponseMessage> SetGetHeaders(HttpClient client, string requestUri)
+        private async Task<HttpResponseMessage> SetGetHeaders(HttpClient client, string requestUri)
         {
             await SetBaseUri(client);
             // Clear request headers.
@@ -175,14 +175,14 @@ namespace DSCC.CW1._7902.UI.Controllers
         }
         #endregion
         #region SetBaseUri
-        public async Task SetBaseUri(HttpClient client)
+        private async Task SetBaseUri(HttpClient client)
         {
             // Set base Uri.
             client.BaseAddress = new System.Uri(BaseUri);
         }
         #endregion
         #region MakeRequest
-        public async Task MakeRequest(TModel model, string requestType = "POST", int? id = null)
+        private async Task MakeRequest(TModel model, string requestType = "POST", int? id = null)
         {
             using (HttpClient client = new HttpClient())
             {
