@@ -70,10 +70,11 @@ namespace DSCC.CW1._7902.UI.Controllers
             {
                 // If all the fields are valid, post the created model and return
                 // to the list of models. Otherwise, return the 'Create' view
-                if (ModelState.IsValid) {
+                if (ModelState.IsValid)
+                {
                     await MakeRequest(model);
                     return RedirectToAction("Index");
-                } 
+                }
                 else return View();
             }
             catch
@@ -103,7 +104,7 @@ namespace DSCC.CW1._7902.UI.Controllers
                 {
                     await MakeRequest(model, "PUT", id);
                     return RedirectToAction("Index");
-                } 
+                }
                 else return View();
             }
             catch
