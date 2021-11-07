@@ -3,10 +3,12 @@ os: windows
 files:
   - source: app
     destination: c:\DSCC.CW1.7902.UI
+  - source: scripts
+    destination: c:\DSCC.CW1.7902.UI\scripts
 hooks:
-#  BeforeInstall:
-#    - location: \deletewebsite.bat
-#      timeout: 180
-#  AfterInstall:
-#    - location: \installwebsite.bat
-#      timeout: 180
+  BeforeInstall:
+    - location: scripts\deletewebsite.bat
+      timeout: 180
+  AfterInstall:
+    - location: scripts\installwebsite.bat
+      timeout: 180
