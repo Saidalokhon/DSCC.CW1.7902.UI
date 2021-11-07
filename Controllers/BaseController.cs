@@ -15,7 +15,7 @@ namespace DSCC.CW1._7902.UI.Controllers
     {
         #region Private variables and constructor
         // Create base Uri string for HttpClient
-        private string BaseUri = "https://localhost:44381/api/";
+        private string BaseUri = "http://ec2-3-82-229-54.compute-1.amazonaws.com/api/";
         // Create private string _modelName to determine which model should
         // controller use.
         private string _modelName;
