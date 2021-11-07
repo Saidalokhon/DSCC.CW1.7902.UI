@@ -1,0 +1,12 @@
+version: 0.0
+os: windows
+files:
+  - source: app
+    destination: c:\DSCC.CW1.7902.UI
+hooks:
+#  BeforeInstall:
+#    - location: \deletewebsite.bat
+#      timeout: 180
+#  AfterInstall:
+#    - location: \installwebsite.bat
+#      timeout: 180
